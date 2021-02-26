@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+// 클래스 의 등장 , prototype 
+class a{}
+console.log(typeof a);
+
+//prototype 
+let pro = {name:"홍길동",age:22};
+function testPro(){
+}
+testPro.prototype = pro;
+let test = new testPro();
+console.log(test.name);	// 홍길동
+
+// 기존 클래스 사용방법 
+function tests(one, two, three){
+	this.one = one ;
+	this.two = two ;
+	this.three = three;
+}
+tests.prototype.sum = function(){
+	return this.one +this.two + this.three;
+}
+let tests1 = new tests(2,4,6);
+let tests2 = new tests();
+console.log(tests1.sum());
+console.log(tests2.sum());
+// class 사용방법 
+class classTest{
+	constructor(a=0,b=0,c=0){
+		this.a = a ;
+		this.b = b ;
+		this.c = c ;
+	}
+	sum(){
+		return this.a + this.b + this.c;
+	}
+	minus(){
+		return this.a - this.b;
+	}
+}
+let classTest1 = new classTest(4,5,6);
+let classTest2 = new classTest(10,2);
+console.log(classTest1.sum());
+console.log(classTest2.minus());
+</script>
+</body>
+</html>

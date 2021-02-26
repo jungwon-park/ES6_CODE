@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+// 구조 분해 할당 5 - 배열 
+let scores = [20,40,50];
+let [ex1 , ex2 , ex3, ex4=100] = scores; //ex4에 대한 기본값 부여 가능 
+console.log(ex4);
+
+// 중첩 배열 
+let scores_Second = [10,20,30,[40,50]];
+let [test1, test2, test3, [test4,test5]] = scores_Second;
+console.log(test4);
+
+let pets = {
+		dog:"우리집 강아지",
+		cat:["우리집 고양이","옆집 고양이"],
+		fish:[{one :"한 마리", two :"두 마리"}]
+};
+let {cat:[pet]} = pets;		// 우리집 고양이
+let {cat:[,pet]} = pets;	// 옆집 고양이
+let {fish:[mypet]} = pets;	
+console.log(pet);
+console.log(mypet);
+
+</script>
+</body>
+</html>

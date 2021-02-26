@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//구조 분해 할당 4  
+// 배열을 이용한 구조 분해 할당
+let grades = [20,40,60];
+let [grade1 , grade2] = grades;
+
+console.log(`grade1:${grade1}, grade2:${grade2}`);
+ 
+let grades2 = [20,40,60];
+//40에 해당하는 객체명을 선언하지 않고도 출력이 가능
+let [grade11 , , grade22] = grades2; 
+console.log(`grade1:${grade11}, grade2:${grade22}`);
+
+// gra1 , gra2 ,gra3 (20,40,60) ==> gra1 , gra2 ,gra3 (70,80,90) 
+// 같은 배열 객체명을 값만 변경하여 사용
+let [gra1, gra2, gra3] = grades;
+let temp = [70, 80, 90];
+
+[gra1, gra2, gra3] = temp;
+console.log(`gra1:${gra1}, gra2:${gra2}, gra3: ${gra3}`);
+</script>
+</body>
+</html>

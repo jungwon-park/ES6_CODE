@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript"> 
+//구조 분해 할당2
+let test = {kor: 10,math: 20,eng: 30};
+let {kor, math, eng} = test;
+
+console.log(`kor:${kor},math:${math},eng:${eng}`);
+test.kor = 100;		//값이 변하지 않는다. 
+console.log(`kor:${kor},math:${math},eng:${eng}`);
+({kor,math} = test);//재할당한 값 변수에 반영   
+console.log(`kor:${kor},math:${math},eng:${eng}`);
+({total = kor+math+eng} = test); //객체 추가 생성
+console.log('총합:'+total);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//Collection - map 
+let map = new Map();
+map.set("name","홍길동");
+map.set("age",18);
+map.set("gender","남");
+
+for(let [k,v] of map)
+	console.log(`${k} : ${v}`);
+	
+// map 초기화 
+let mapData = new Map([["name","홍길동"],["age",18],["gender","남"]]);
+for(let [k,v] of mapData){
+	console.log(typeof v);
+}
+	console.log(`${k} : ${v}`);
+</script>
+</body>
+</html>

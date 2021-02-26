@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+// Class 은닉화
+class classTest{
+	#a;
+	#b;
+	#c;
+	constructor(a=0,b=0,c=0){
+		this.#a = a ;
+		this.#b = b ;
+		this.#c = c ;
+	}
+	sum(){
+		return this.#a + this.#b + this.c;
+	}
+	#minus(){
+		return this.#a - this.#b;
+	}
+}
+let classTest1 = new classTest(4,5,6); 
+let classTest2 = new classTest(10,2);
+console.log(classTest1.sum());
+console.log(classTest1.a);
+console.log(classTest2.minus());
+</script>
+</body>
+</html>

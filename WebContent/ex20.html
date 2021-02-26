@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+// class static
+// class 내부에서 사용하는 전역변수 만들기 
+class classTest{
+	#a;
+	#b;
+	#c;
+	#text;
+	constructor(a=0,b=0,c=0){
+		this.#a = a ;
+		this.#b = b ;
+		this.#c = c ;
+		this.#text = "static 설명하겠습니다.";
+	}
+	sum(){
+		return this.#a + this.#b + this.c;
+	}
+	#minus(){
+		return this.#a - this.#b;
+	}
+	text(){
+		return this.#text;
+	}
+}
+let classTest1 = new classTest(4,5,6); 
+let classTest2 = new classTest(1,2,3); 
+let classTest3 = new classTest(7,8,9); 
+console.log(classTest1.text());
+// 전역변수 생성
+class classTests{
+	#a;
+	#b;
+	#c;
+	static #text = "static 설명하겠습니다.";
+	constructor(a=0,b=0,c=0){
+		this.#a = a ;
+		this.#b = b ;
+		this.#c = c ;
+	}
+	sum(){
+		return this.#a + this.#b + this.c;
+	}
+	#minus(){
+		return this.#a - this.#b;
+	}
+	text(){
+		return classTests.#text;
+	}
+	static text2(){
+		return classTests.#text;
+	}
+}
+let a = new classTests();
+console.log(a.text());
+console.log(classTests.text2());
+
+</script>
+</body>
+</html>

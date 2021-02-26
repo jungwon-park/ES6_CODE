@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+// 구조 분해 할당 3 
+// 객체의 속성명 변경 
+let test = {kor: 10,math: 20,eng: 30,
+		student:{
+			name:"Kim",
+			gender:"M"
+			}};
+//let {kor:change_kor , math} = test; 
+
+//console.log(kor); //error
+//console.log(change_kor); //10
+
+let {student:{name,gender}} = test;
+console.log(name);
+// 구조 분해 할당을 이용한 함수 선언 방법 
+let priTest = function(test){
+	console.log(`kor:${test.kor},
+				math:${test.math}`);
+};
+const priTest = function({kor,math,eng}){
+	console.log(`kor:${kor},
+				math:${math}`);
+};
+const priTest =({kor,math,eng})=>{
+	console.log(`kor:${kor},
+				math:${math}`);
+};
+</script>
+</body>
+</html>

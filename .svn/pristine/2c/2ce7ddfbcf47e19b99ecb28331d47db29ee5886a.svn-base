@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script> // 구조 분해 할당
+let test = {
+		kor : 10,
+		math: 20,
+		eng	: 30
+}
+function exam(test){
+	let kor = test.kor;
+	let math= test.math;
+	let eng = test.eng;
+	
+	console.log(`kor:${test.kor},math:${test.math}`);
+	console.log(`kor:${kor},math:${math}`); 
+	
+	let {kor,math} = test;
+	console.log(kor);
+}
+exam(test); 
+// 생략
+function exam(test){
+	let {kor,math} = test;
+	console.log(kor);
+}
+exam(test);
+
+//속성만 사용할 경우
+function exam({kor,math}){
+	console.log(`${kor},${math}`);
+}
+exam(test); 
+</script>
+</body>
+</html>

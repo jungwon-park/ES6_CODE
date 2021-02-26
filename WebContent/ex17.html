@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//Arrow Function
+window.addEventListener("load",function(){
+	alert('load 1');
+});
+window.addEventListener("load",()=>{
+	alert('load 2');
+});
+// 일반적인 함수역할
+function funLoad(){
+	this.one = 10; //전역객체
+	console.log(window.one+", funLoad");
+}
+// 객체를 만들기 위한 생성자
+function objectLoad(){
+	this.one = 1;
+	this.two = 2;
+	this.three = 3;
+}
+funLoad();
+let obj = new objectLoad();
+console.log(obj.one);	//1
+console.log(one);		//10
+
+let addFunction1 = function add(a,b){
+	console.log(a+b);
+}
+let addFunction2 = (a,b)=>{
+	console.log(a+b);		// {} 안에 return만 있을경우 {},return 생략가능
+}							// () 안에 단독으로 사용될경우 생략가능 
+addFunction1(1,4);			// ex) let addFunction2 = a=> a
+addFunction2(10,4);
+</script>
+</body>
+</html>

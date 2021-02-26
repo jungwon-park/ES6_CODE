@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+// Rest Parameter 
+function rest(x,y){
+	console.log(x);
+	console.log(y);
+}
+rest(1,6);
+
+function rests(){
+	console.log(arguments[0]);
+	console.log(arguments[1]);
+	console.log(arguments[2]);
+}
+rests(1,4,6,7);
+
+function restParam(x,y,...value){
+	console.log(`${x},${y}`);
+	for(let a of value)
+		console.log(a);
+}
+restParam(1,2,7,8);
+</script>
+</body>
+</html>
