@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+// class static getter/setter
+class classTests{
+	#one;
+	#two;
+	#three;
+	setone(value){
+		this.#one = value;
+	}
+	getone(){
+		return this.#one;
+	}
+}
+let a = new classTests();
+a.setone(1);
+console.log(a.getone());
+
+class classTests2{
+	#one;
+	#two;
+	#three;
+	set one(value){
+		this.#one = value;
+	}
+	get one(){
+		return this.#one;
+	}
+}
+let a2 = new classTests2();
+a2.one = 10;
+console.log(a2.one);
+a2.one--;
+console.log(a2.one);
+//
+
+</script>
+</body>
+</html>
