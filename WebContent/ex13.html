@@ -15,12 +15,16 @@ map.set("gender","남");
 for(let [k,v] of map)
 	console.log(`${k} : ${v}`);
 	
-// map 초기화 
+// map 데이터 타입
+let mapData = new Map([["name","홍길동"],["age",18],["gender","남"]]);
+for(let [k,v] of mapData){
+	console.log(`${k} : ${v}`);
+}
+// map 초기화  
 let mapData = new Map([["name","홍길동"],["age",18],["gender","남"]]);
 for(let [k,v] of mapData){
 	console.log(typeof v);
 }
-	console.log(`${k} : ${v}`);
 </script>
 </body>
 </html>

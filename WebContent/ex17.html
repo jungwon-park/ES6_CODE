@@ -18,16 +18,16 @@ function funLoad(){
 	this.one = 10; //전역객체
 	console.log(window.one+", funLoad");
 }
+funLoad();
+console.log(one);
 // 객체를 만들기 위한 생성자
 function objectLoad(){
 	this.one = 1;
 	this.two = 2;
 	this.three = 3;
 }
-funLoad();
 let obj = new objectLoad();
 console.log(obj.one);	//1
-console.log(one);		//10
 
 let addFunction1 = function add(a,b){
 	console.log(a+b);

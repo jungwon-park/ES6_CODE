@@ -5,36 +5,36 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript">
-//1)
-let Kings = {  //여기서 {}는 new Object()와 동일한 의미이다.  
-	세종:"대왕",
-	염라:"대왕",
-	광개토:"대왕"
-};
-console.log(Kings);
-//2)
-let math = 10;
-let eng  = 20;
-let art  = 30; 
-let total = {math,eng,art};
-console.log(total); 
-//3) 키 이름과 값 변수의 이름이 동일하면 생략가능
-function totalTest(math,eng,art){
-	return {math,eng,art,total:function(){}};
-	//객체 속성으로 함수 초기화 : function 생략가능
-	return {math,eng,art,total(){return math+eng+art;}};
-} 
-let test = totalTest(40,50,60);
-console.log(test);
-console.log(test.total());
-
-//4) 속성명을 정의할 때 변수 사용가능
-let attr = "font-color"
-let data = {
-		[attr]:"red"
+<script> // 구조 분해 할당
+let test = {
+		kor : 10,
+		math: 20,
+		eng	: 30
 }
-console.log(data);
+function exam(test){
+	let kor = test.kor;
+	let math= test.math;
+	let eng = test.eng;
+	
+	console.log(`kor:${test.kor},math:${test.math}`);
+	console.log(`kor:${kor},math:${math}`); 
+	
+	let {kor,math} = test;
+	console.log(kor);
+}
+exam(test); 
+// 생략
+function exam(test){
+	let {kor,math} = test;
+	console.log(kor);
+}
+exam(test);
+
+//속성만 사용할 경우
+function exam({kor,math}){
+	console.log(`${kor},${math}`);
+}
+exam(test); 
 </script>
 </body>
 </html>
